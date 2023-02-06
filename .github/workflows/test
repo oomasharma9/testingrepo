@@ -14,7 +14,7 @@ on:
         type: string
         required: true
       confirm-destroy:
-        description: "Confirm destroy"
+        description: "Confirm distroy"
         type: string
         required: true
       terraform-directory:
@@ -50,8 +50,8 @@ permissions:
 jobs:
   terraform-deploy:
     runs-on: ubuntu-latest
-    environment: 'ae'
-  
+    environment: 'fakkel'
+
     env:
       TF_CLI_ARGS_init: ${{ inputs.terraform-init-args }}
       TF_CLI_ARGS_plan: ${{ inputs.terraform-plan-args }}
@@ -85,6 +85,22 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+     # API call to create ISSUE, requires Token in github
+      # - name: Get current date
+      #   id: date
+      #   run: |
+      #     echo "date=$(date +'%d-%m-%Y')" >> $GITHUB_ENV  
+
+      # - name: GIthub Issue API call
+      #   run: |
+      #     curl \
+      #     -X POST \
+      #     -H "Accept: application/vnd.github+json" \
+      #     -H "Authorization: Bearer ${{ secrets.BEARER_TOKEN }}" \
+      #     -H "X-GitHub-Api-Version: 2022-11-28" \
+      #     https://api.github.com/repos/priedijk/FAKKEL-test/issues \
+      #     -d '{"title":"Terraform drift detected (${{ env.date }})","body":"I'\''m having a problem. Terraform drift detected: \n branch ${{ github.ref_name }} in ${{ github.event.inputs.tenant }}-${{ github.event.inputs.location }}  run number ${{ github.run_id }} \n [Failed Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) \n [Codebase](https://github.com/${{ github.repository }}/tree/${{ github.sha }}).","assignees":["priedijk"],"labels":["bug"]}'
+
       - name: Set workflow environment variables
         run: ./scripts/set-workflow-env-variables.sh ${{ inputs.tenant }} ${{ inputs.location }} ${{ inputs.IsNewDeployment }}
 
@@ -101,8 +117,8 @@ jobs:
         id: init
         run: |
           terraform -chdir=${{inputs.terraform-directory}} init \
-            -backend-config="resource_group_name=RG1" \
-            -backend-config="storage_account_name=testingreposa1"
+            -backend-config="resource_group_name=tfstatetestfakkel" \
+            -backend-config="storage_account_name=tfstatetestfakkel"
       - name: Terraform Validate
         id: validate
         run: |
