@@ -1,7 +1,7 @@
 terraform {
   backend "azurerm" {
     resource_group_name  = "tfstatetestingrepo"
-    storage_account_name = "tfstatetesttestingrepo"
+    storage_account_name = "testingreposa1"
     container_name       = "tfstate"
   }
   required_providers {
