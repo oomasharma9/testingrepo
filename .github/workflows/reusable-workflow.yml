@@ -65,7 +65,7 @@ jobs:
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       ARM_USE_OIDC: true
-      VPN_SECRET: ${{ inputs.Location == 'weu' && secrets.SECRET_KEY || secrets.SECRET_KEY2 }}
+#      VPN_SECRET: ${{ inputs.Location == 'weu' && secrets.SECRET_KEY || secrets.SECRET_KEY2 }}
   
     steps:
       - name: '${{ github.ref_name }} to ${{ github.event.inputs.location }} ${{ github.event.inputs.tenant }}'
@@ -104,7 +104,7 @@ jobs:
         run: |
           terraform -chdir=${{inputs.terraform-directory}} init \
             -backend-config="resource_group_name=RG1" \
-            -backend-config="storage_account_name=RG1"
+            -backend-config="storage_account_name=testingreposa1"
 
       - name: Terraform Validate
         id: validate
