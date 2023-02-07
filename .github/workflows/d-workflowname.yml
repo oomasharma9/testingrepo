@@ -49,7 +49,7 @@ jobs:
       IsNewDeployment: ${{ github.event.inputs.IsNewDeployment }}
       terraform-action: ${{ github.event.inputs.terraform-action }}
       terraform-directory: 'branch-test'
-      terraform-init-args: '-backend-config="key=tfstate"'
+      terraform-init-args: '-backend-config="key=branchname.tfstate"'
       terraform-plan-args: ''
       terraform-apply-args: ''
     secrets: inherit

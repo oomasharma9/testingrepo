@@ -28,7 +28,7 @@ variable "single_email" {
   default = {
     mail1 = {
       name          = "single",
-      email_address = "singles@test.nl"
+      email_address = "omasharma9@gmail.com"
     }
   }
 }
@@ -41,11 +41,11 @@ variable "multiple_emails" {
   default = {
     mail1 = {
       name          = "test1",
-      email_address = "123@test.nl"
+      email_address = "oomasharma9@gmail.com"
     }
     mail2 = {
       name          = "test2",
-      email_address = "456@test.nl"
+      email_address = "omasharma7@gmail.com"
     }
   }
 }
