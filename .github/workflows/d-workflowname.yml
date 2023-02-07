@@ -36,11 +36,6 @@ on:
         default: false
         required: true
 
-# on:
-#   push:
-#     branches:
-#       - "main"
-
 run-name: Deploy Workflow CoP | ${{ github.event.inputs.terraform-action == 'plan+apply' && 'apply' || github.event.inputs.terraform-action }} | ${{ github.event.inputs.tenant }} | ${{ github.event.inputs.location == 'frc' && 'FRC' || (github.event.inputs.location == 'weu' && 'WEU') }} | ${{ github.ref_name }}
 
 name: Deploy Workflow CoP
