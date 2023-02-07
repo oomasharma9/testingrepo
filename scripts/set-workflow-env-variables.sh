@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git update-index --chmod=+x ./.github/scripts/set-workflow-env-variables.sh
+
 # source env file and set values as environment variables
 while read -r line
 do
