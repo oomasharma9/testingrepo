@@ -50,7 +50,7 @@ permissions:
 jobs:
   terraform-deploy:
     runs-on: ubuntu-latest
-    environment: 'fakkel'
+    environment: 'ae'
   
     env:
       TF_CLI_ARGS_init: ${{ inputs.terraform-init-args }}
@@ -119,8 +119,8 @@ jobs:
         id: init
         run: |
           terraform -chdir=${{inputs.terraform-directory}} init \
-            -backend-config="resource_group_name=tfstatetestfakkel" \
-            -backend-config="storage_account_name=tfstatetestfakkel"
+            -backend-config="resource_group_name=RG1" \
+            -backend-config="storage_account_name="testingreposa1"
 
       - name: Terraform Validate
         id: validate
