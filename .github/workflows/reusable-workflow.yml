@@ -42,8 +42,6 @@ on:
         type: string
         default: 'false'
 
-run-name: Reusable workflow
-
 permissions:
   id-token: write
   contents: read
