@@ -2,12 +2,12 @@ resource "azurerm_monitor_metric_alert" "windows_cpu_percentage" {
   name                = "alert-cpupercentage"
   resource_group_name = azurerm_resource_group.action-group-rg.name
   severity            = 0
-  scopes              = [azurerm_resource_group.action-group-rg.id]
+  scopes              = [azurerm_storage_account.test.id]
   description         = "Action will be triggered when Transactions count is greater than 85."
   criteria {
-    metric_namespace = "microsoft.resources/subscriptions"
-    metric_name      = "Percentage CPU"
-    aggregation      = "Average"
+    metric_namespace = "Microsoft.Storage/storageAccounts"
+    metric_name      = "Transactions"
+    aggregation      = "Total"
     operator         = "GreaterThan"
     threshold        = 85
   }
