@@ -3,12 +3,12 @@ locals {
   email_receiver_group-test = var.location_code == "frc" ? var.single_email : var.multiple_emails
 
   single_email = [
-    { name = "single", email_address = "single@test.nl", use_common_alert_schema = true }
+    { name = "single", email_address = "uma.c.sharma@avanade.com", use_common_alert_schema = true }
   ]
 
   multiple_emails = [
-    { name = "test1", email_address = "123@test.nl", use_common_alert_schema = true },
-    { name = "test2", email_address = "456@test.nl", use_common_alert_schema = true }
+    { name = "test1", email_address = "uma.c.sharma@avanade.com", use_common_alert_schema = true },
+    { name = "test2", email_address = "oomasharma9@gmail.com", use_common_alert_schema = true }
   ]
   local1 = "peanut"
 }
