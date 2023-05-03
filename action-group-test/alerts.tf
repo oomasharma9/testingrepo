@@ -14,9 +14,8 @@ resource "azurerm_monitor_metric_alert" "windows_cpu_percentage" {
     operator         = "GreaterThan"
     threshold        = 85
   }
+
   action {
-    content {
-      action_group_id = data.azurerm_monitor_action_group.action_group_id.id
-    }
+    action_group_id = azurerm_monitor_action_group.action-group.id
   }
 }
