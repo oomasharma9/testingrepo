@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "test" {
-  count                           = var.location_code == "weu" ? 1 : 0
+  # count                           = var.location_code == "weu" ? 1 : 0
   name                            = "stttstest028318"
   resource_group_name             = azurerm_resource_group.action-group-rg.name
   location                        = "westeurope"
@@ -11,8 +11,8 @@ resource "azurerm_storage_account" "test" {
 }
 
 resource "azurerm_storage_management_policy" "tfsecops_lcm" {
-  count              = var.location_code == "weu" && local.local1 == "peanut" ? 1 : 0
-  storage_account_id = azurerm_storage_account.test[0].id
+  #  count              = var.location_code == "weu" && local.local1 == "peanut" ? 1 : 0
+  storage_account_id = azurerm_storage_account.test.id
   rule {
     name    = "Delete versions older than 30 days"
     enabled = true
