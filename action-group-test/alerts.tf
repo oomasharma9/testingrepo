@@ -2,7 +2,6 @@ data "azurerm_subscription" "current" {
 }
 
 resource "azurerm_monitor_metric_alert" "windows_cpu_percentage" {
-  count               = var.vm_type == "windows" ? 1 : 0
   name                = "alert-cpupercentage"
   resource_group_name = azurerm_resource_group.action-group-rg
   severity            = 0
@@ -15,7 +14,7 @@ resource "azurerm_monitor_metric_alert" "windows_cpu_percentage" {
     operator         = "GreaterThan"
     threshold        = 85
   }
-  dynamic "action" {
+  action {
     content {
       action_group_id = data.azurerm_monitor_action_group.action_group_id.id
     }
