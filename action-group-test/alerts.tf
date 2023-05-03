@@ -1,5 +1,5 @@
-resource "azurerm_monitor_metric_alert" "SA alert" {
-  name                = "alert-cpupercentage"
+resource "azurerm_monitor_metric_alert" "example" {
+  name                = "example-metricalert"
   resource_group_name = azurerm_resource_group.action-group-rg.name
   severity            = 0
   scopes              = [azurerm_storage_account.test.id]
