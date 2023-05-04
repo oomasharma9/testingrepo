@@ -32,7 +32,6 @@ resource "azurerm_windows_virtual_machine" "windows_vm" {
     storage_account_type = var.os_disk_storage_account_type
     disk_size_gb         = var.vm_os_disk_disk_size_gb
   }
-  tags = local.tags
   lifecycle {
     ignore_changes = [
       zone,
@@ -52,7 +51,6 @@ resource "azurerm_managed_disk" "windows_data_disk" {
   zone                 = var.zone
 
   disk_size_gb = var.vm_data_disk_size_gb
-  tags         = local.tags
   lifecycle {
     ignore_changes = [
       zone
@@ -107,8 +105,6 @@ SETTINGS
     {
         "workspaceKey": "${data.azurerm_log_analytics_workspace.log_shared_workspace.primary_shared_key}"
     }
-PROTECTEDSETTINGS
-  tags               = local.tags
 }
 
 
