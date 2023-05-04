@@ -33,10 +33,10 @@ resource "azurerm_monitor_activity_log_alert" "windows_restart_vm" {
 
   criteria {
     # resource_id    = azurerm_windows_virtual_machine
-    operation_name = "Microsoft.Compute/virtualMachines/restart/action"
+    operation_name = "Microsoft.Compute/virtualMachines"
     category       = "Administrative"
     status         = "succeeded"
-    level          = "Verbose"
+    level          = "Critical"
 
   }
   action {
