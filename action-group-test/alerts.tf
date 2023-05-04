@@ -28,7 +28,7 @@ output "current_subscription_display_name" {
 resource "azurerm_monitor_activity_log_alert" "windows_restart_vm" {
   #  count               = var.vm_type == "windows" ? 1 : 0
   name = "alert-restartvm"
-  #resource_group_name = azurerm_resource_group.action-group-rg.name
+  resource_group_name = azurerm_resource_group.action-group-rg.name
   scopes = [data.azurerm_subscription.current.id]
 
   criteria {
