@@ -15,7 +15,7 @@ variable "location_code" {
   default     = "weu"
 }
 
-variable "single_email" {
+/*variable "single_email" {
   type = map(object({
     name          = string
     email_address = string
@@ -37,13 +37,13 @@ variable "multiple_emails" {
     /*    mail1 = {
       name          = "test1",
       email_address = "uma.c.sharma@avanade.com"
-    }*/
+    }
     mail2 = {
       name          = "test2",
       email_address = "oomasharma9@gmail.com"
     }
   }
-}
+}*/
 
 variable "role-id-owner" {
   type    = string

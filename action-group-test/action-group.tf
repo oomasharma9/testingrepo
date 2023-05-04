@@ -1,4 +1,4 @@
-locals {
+/*locals {
   email_receiver_group      = var.location_code == "frc" ? local.single_email : local.multiple_emails
   email_receiver_group-test = var.location_code == "frc" ? var.single_email : var.multiple_emails
 
@@ -11,7 +11,7 @@ locals {
     { name = "test2", email_address = "oomasharma9@gmail.com", use_common_alert_schema = true }
   ]
   local1 = "peanut"
-}
+}*/
 
 
 resource "azurerm_resource_group" "test-group-rg" {
@@ -45,12 +45,12 @@ resource "azurerm_monitor_action_group" "action-group" {
     }
   }
 
-  dynamic "email_receiver" {
+  /*  dynamic "email_receiver" {
     for_each = local.email_receiver_group-test
     content {
       name                    = email_receiver.value.name
       email_address           = email_receiver.value.email_address
       use_common_alert_schema = true
     }
-  }
+  }*/
 }
