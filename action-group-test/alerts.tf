@@ -19,7 +19,7 @@
 */
 
 resource "azurerm_monitor_activity_log_alert" "windows_restart_vm" {
-  count               = var.vm_type == "windows" ? 1 : 0
+  #  count               = var.vm_type == "windows" ? 1 : 0
   name                = "alert-restartvm"
   resource_group_name = azurerm_monitor_action_group.action-group.name
   scopes              = azurerm_windows_virtual_machine.main.id
@@ -33,8 +33,6 @@ resource "azurerm_monitor_activity_log_alert" "windows_restart_vm" {
 
   }
   action {
-    content {
-      action_group_id = data.azurerm_monitor_action_group.action_group.id
-    }
+    action_group_id = azurerm_monitor_action_group.action-group.id
   }
 }
