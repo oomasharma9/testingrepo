@@ -15,7 +15,7 @@ data "azurerm_subnet" "subnet" {
 data "azurerm_client_config" "current" {
 }
 
-
+/*
 data "azurerm_key_vault" "shared_hub_sc_keyvault" {
   provider            = azurerm.az-shared-hub
   name                = "kv-sc-platform-weu-2e69"
@@ -52,7 +52,7 @@ data "azurerm_log_analytics_workspace" "log_shared_workspace" {
   resource_group_name = var.log_analytics_resource_group_name
 }
 
-/*data "azurerm_monitor_action_group" "action_group" {
+data "azurerm_monitor_action_group" "action_group" {
   count               = var.action_group_present == true ? 1 : 0
   resource_group_name = var.infra_resource_group_name
   name                = var.action_group_name

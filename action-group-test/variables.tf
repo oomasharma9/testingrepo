@@ -236,7 +236,7 @@ variable "vm_plan" {
 }
 
 
-variable "log_analytics_workspace_id" {
+/*variable "log_analytics_workspace_id" {
   default     = null
   type        = string
   description = "log analytics workspace id to be used for the extension installation"
@@ -247,7 +247,7 @@ variable "log_analytics_workspace_key" {
   type        = string
   description = "log analytics workspace key to be used for the extension installation"
 }
-
+*/
 
 variable "storage_account_name" {
   default     = null
@@ -255,7 +255,7 @@ variable "storage_account_name" {
   description = "Storage account where packages are stored"
 }
 
-
+/*
 variable "log_analytics_workspace_name" {
   default     = null
   type        = string
@@ -267,7 +267,7 @@ variable "log_analytics_resource_group_name" {
   type        = string
   description = "log shared resource group name"
 }
-
+*/
 variable "action_group_name" {
   description = "Name of the Action group where alert needs to be attached"
   type        = string

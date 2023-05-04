@@ -10,7 +10,7 @@ resource "azurerm_windows_virtual_machine" "windows_vm" {
   network_interface_ids = [azurerm_network_interface.nic.id]
   size                  = var.vm_size
   admin_username        = var.vm_user
-  admin_password        = sensitive(data.azurerm_key_vault_secret.windows_password[0].value)
+  admin_password        = "testing123"
 
   source_image_reference {
     publisher = var.vm_publisher
