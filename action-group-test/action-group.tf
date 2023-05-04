@@ -36,14 +36,14 @@ resource "azurerm_monitor_action_group" "action-group" {
   resource_group_name = azurerm_resource_group.action-group-rg.name
   short_name          = "shortername"
 
-  dynamic "arm_role_receiver" {
-    for_each = var.location_code
+  /*dynamic "arm_role_receiver" {
+    for_each = var.location_code == "weu" ? [] : [1]
     content {
       name                    = "AzureAdvisorAlerts${var.location_code}"
       role_id                 = var.role-id-owner
       use_common_alert_schema = true
     }
-  }
+  }*/
 
   dynamic "email_receiver" {
     for_each = local.email_receiver_group-test
