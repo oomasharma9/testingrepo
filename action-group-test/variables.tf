@@ -50,7 +50,7 @@ variable "role-id-owner" {
   default = "8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
 }
 
-variable "vm_type" {
+/*variable "vm_type" {
   type        = string
   description = "windows or linux"
 }
@@ -73,7 +73,7 @@ variable "action_group_present" {
 variable "infra_resource_group_name" {
   type        = string
   description = "(required) The name of the Resource Group where the subnets are hosted"
-}
+}*/
 
 /*variable "new_deployment" {
   description = "new deployment tick"
