@@ -86,7 +86,7 @@ resource "azurerm_virtual_machine_data_disk_attachment" "windows_data_disk1" {
   lun                = var.vm_data_disk_lun1
   caching            = var.vm_disk_caching
 }
-*/
+
 resource "azurerm_virtual_machine_extension" "windows_oms_ext" {
   count                = var.vm_type == "windows" ? 1 : 0
   name                 = "MicrosoftMonitoringAgent"
@@ -106,7 +106,4 @@ SETTINGS
         "workspaceKey": "${data.azurerm_log_analytics_workspace.log_shared_workspace.primary_shared_key}"
     }
 }
-
-
-
-
+*/
