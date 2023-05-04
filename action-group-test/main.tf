@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "rg" {
   location = var.resource_group_location
-  name     = "action-group-rg-resources"
+  name     = "${random_pet.prefix.id}-rg"
 }
 
 # Create virtual network
