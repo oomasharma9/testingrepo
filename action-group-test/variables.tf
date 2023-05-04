@@ -1,23 +1,18 @@
-variable "new_deployment" {
-  description = "new deployment tick"
-  type        = string
-  default     = "empty"
-}
-
 variable "resource_group_location" {
   default     = "westeurope"
   description = "Location of the resource group."
+}
+
+variable "prefix" {
+  type        = string
+  default     = "win-vm-iis"
+  description = "Prefix of the resource name"
 }
 
 variable "location_code" {
   description = "Location code identifier"
   type        = string
   default     = "weu"
-}
-
-variable "role-id-owner" {
-  type    = string
-  default = "8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
 }
 
 variable "single_email" {
@@ -28,7 +23,7 @@ variable "single_email" {
   default = {
     mail1 = {
       name          = "single",
-      email_address = "singles@test.nl"
+      email_address = "uma.c.sharma@avanade.com"
     }
   }
 }
@@ -41,14 +36,52 @@ variable "multiple_emails" {
   default = {
     mail1 = {
       name          = "test1",
-      email_address = "123@test.nl"
+      email_address = "uma.c.sharma@avanade.com"
     }
     mail2 = {
       name          = "test2",
-      email_address = "456@test.nl"
+      email_address = "oomasharma9@gmail.com"
     }
   }
 }
+
+variable "role-id-owner" {
+  type    = string
+  default = "8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
+}
+
+variable "vm_type" {
+  type        = string
+  description = "windows or linux"
+}
+
+variable "vm_name" {
+  type        = string
+  description = "Name of the vm"
+}
+
+variable "resource_group_name" {
+  type        = string
+  description = "(required) The name of the Resource Group where the VM"
+}
+
+variable "action_group_present" {
+  description = "Flag to check if action group is present or not"
+  type        = bool
+}
+
+variable "infra_resource_group_name" {
+  type        = string
+  description = "(required) The name of the Resource Group where the subnets are hosted"
+}
+
+/*variable "new_deployment" {
+  description = "new deployment tick"
+  type        = string
+  default     = "empty"
+}
+
+
 
 
 
@@ -60,27 +93,6 @@ variable "vnet_name" {
 variable "subnet_name" {
   type        = string
   description = " (required) The name of the virtual network subnet to create the VM"
-}
-
-variable "resource_group_name" {
-  type        = string
-  description = "(required) The name of the Resource Group where the VM"
-}
-
-variable "infra_resource_group_name" {
-  type        = string
-  description = "(required) The name of the Resource Group where the subnets are hosted"
-}
-
-variable "vm_type" {
-  type        = string
-  description = "windows or linux"
-}
-
-
-variable "vm_name" {
-  type        = string
-  description = "Name of the vm"
 }
 
 
@@ -236,7 +248,7 @@ variable "vm_plan" {
 }
 
 
-/*variable "log_analytics_workspace_id" {
+variable "log_analytics_workspace_id" {
   default     = null
   type        = string
   description = "log analytics workspace id to be used for the extension installation"
@@ -247,7 +259,7 @@ variable "log_analytics_workspace_key" {
   type        = string
   description = "log analytics workspace key to be used for the extension installation"
 }
-*/
+
 
 variable "storage_account_name" {
   default     = null
@@ -255,7 +267,7 @@ variable "storage_account_name" {
   description = "Storage account where packages are stored"
 }
 
-/*
+
 variable "log_analytics_workspace_name" {
   default     = null
   type        = string
@@ -267,19 +279,15 @@ variable "log_analytics_resource_group_name" {
   type        = string
   description = "log shared resource group name"
 }
-*/
+
 variable "action_group_name" {
   description = "Name of the Action group where alert needs to be attached"
   type        = string
 }
 
-variable "action_group_present" {
-  description = "Flag to check if action group is present or not"
-  type        = bool
-}
 
 variable "zone" {
   description = "(Optional) Specifies the Availability Zones in which this Linux Virtual Machine should be located. Changing this forces a new Linux Virtual Machine to be created."
   type        = string
   default     = null
-}
+}*/

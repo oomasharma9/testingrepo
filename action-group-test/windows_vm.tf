@@ -1,4 +1,4 @@
-resource "azurerm_windows_virtual_machine" "windows_vm" {
+/*resource "azurerm_windows_virtual_machine" "windows_vm" {
   count                      = var.vm_type == "windows" ? 1 : 0
   name                       = var.vm_name
   location                   = data.azurerm_resource_group.rg.location
