@@ -21,7 +21,7 @@
 resource "azurerm_monitor_activity_log_alert" "windows_restart_vm" {
   #  count               = var.vm_type == "windows" ? 1 : 0
   name                = "alert-restartvm"
-  resource_group_name = azurerm_monitor_action_group.action-group.name
+  resource_group_name = azurerm_resource_group.action-group-rg.name
   scopes              = [azurerm_windows_virtual_machine.main.id]
 
   criteria {
