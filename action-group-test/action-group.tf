@@ -1,5 +1,5 @@
 locals {
-  email_receiver_group      = var.location_code == "frc" ? local.single_email : local.multiple_emails
+  /*email_receiver_group      = var.location_code == "frc" ? local.single_email : local.multiple_emails
   email_receiver_group-test = var.location_code == "frc" ? var.single_email : var.multiple_emails
 
   single_email = [
@@ -9,7 +9,7 @@ locals {
   multiple_emails = [
     #    { name = "test1", email_address = "uma.c.sharma@avanade.com", use_common_alert_schema = true },
     { name = "test2", email_address = "oomasharma9@gmail.com", use_common_alert_schema = true }
-  ]
+  ]*/
   local1 = "peanut"
 }
 
