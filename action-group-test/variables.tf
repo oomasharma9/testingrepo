@@ -34,10 +34,10 @@ variable "multiple_emails" {
     email_address = string
   }))
   default = {
-    mail1 = {
+    /*    mail1 = {
       name          = "test1",
       email_address = "uma.c.sharma@avanade.com"
-    }
+    }*/
     mail2 = {
       name          = "test2",
       email_address = "oomasharma9@gmail.com"
