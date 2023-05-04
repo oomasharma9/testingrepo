@@ -22,10 +22,10 @@ resource "azurerm_monitor_activity_log_alert" "windows_restart_vm" {
   count               = var.vm_type == "windows" ? 1 : 0
   name                = "alert-${var.vm_name}-restartvm"
   resource_group_name = var.resource_group_name
-  scopes              = [azurerm_windows_virtual_machine.windows_vm[0].id]
+  scopes              = azurerm_windows_virtual_machine.main.id
 
   criteria {
-    resource_id    = azurerm_windows_virtual_machine.windows_vm[0].id
+    resource_id    = azurerm_windows_virtual_machine.main.id
     operation_name = "Microsoft.Compute/virtualMachines/restart/action"
     category       = "Administrative"
     status         = "succeeded"
