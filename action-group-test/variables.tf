@@ -50,13 +50,13 @@ variable "role-id-owner" {
   default = "8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
 }
 
+
+
+/*
 variable "vm_type" {
   type        = string
   description = "windows or linux"
 }
-
-/*
-
 variable "vm_name" {
   type        = string
   description = "Name of the vm"
